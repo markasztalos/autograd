@@ -10,3 +10,13 @@ python main.py
 # Or use uv directly (no activation needed)
 uv run python main.py
 ```
+
+## Tests
+
+```bash
+# With venv activated
+pytest
+
+# Or with uv
+uv run pytest
+```
