@@ -8,17 +8,16 @@ class Neuron:
         self.ws = [Value(random.uniform(-1.0, 1.0)) for n in range(n_in)]
         self.b = Value(random.uniform(-1.0, 1.0))
 
-    def __call__(self, x: list[float]) -> float:
+    def __call__(self, x: list[float]) -> Value:
         sum_in = sum((wi * xi for wi, xi in zip(self.ws, x)), self.b)
         relu = sum_in.relu()
-        # relu.print_vis()
-        return relu.data
+        return relu
     
 class Layer:
     def __init__(self, n_in: int, n_out: int):
         self.neurons = [Neuron(n_in) for _ in range(n_out)]
     
-    def __call__(self, x: list[float]) -> list[float]:
+    def __call__(self, x: list[float]) -> list[Value]:
         return [n(x) for n in self.neurons]
     
 class MLP:

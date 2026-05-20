@@ -1,4 +1,7 @@
-from vis import render, vis_neuron
+
+
+
+from vis import render
 
 
 class Value:

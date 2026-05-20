@@ -3,7 +3,7 @@ import statistics
 
 from autograd import Value
 from neural_network import MLP, Layer, Neuron
-from vis import vis_2d, vis_neuron
+from vis import vis_2d
 
 SEED = 42
 random.seed(SEED)
@@ -71,7 +71,8 @@ def demonstrate_neural_networks():
     # print(f"{n(x):.2f}")
     # l = Layer(3, 2)
     # print(f"{l(x)}")
-    # nn = MLP(3, [4, 4, 1])
+    nn = MLP(3, [4, 4, 1])
+    nn(x)[0].print_vis()
     # print(f"{nn(x)}")
     
 
